@@ -85,3 +85,4 @@ app.post('/api/chirpstack', async (req, res) => {
 app.listen(port, () => {
   console.log(`API translation service listening at http://localhost:${port}`);
 });
+git

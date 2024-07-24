@@ -1,0 +1,253 @@
+API translation service listening at http://localhost:3000
+Received payload: {"adr":true,"confirmed":true,"data":"EDdWgpASIylxOA==","deduplicationId":"14225d17-e599-4ef0-88f2-7c111809cbac","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":20,"fPort":1,"object":{"accuracy":8,"gps_quality":"Poor","hdop":8,"latitude":37.947,"longitude":-122.5495,"num_sats":8,"sats":8,"status":16},"rxInfo":[{"context":"rPEKrw==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T05:24:35.015+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T05:24:35.076424698+00:00","rssi":-125,"snr":-14,"uplinkId":49059}],"time":"2024-07-22T05:24:35.015+00:00","txInfo":{"frequency":904500000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"EDdWgoASIylxNw==","deduplicationId":"cd50fd55-5f48-40c4-8064-d8f666c86376","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":22,"fPort":1,"object":{"accuracy":8,"gps_quality":"Poor","hdop":8,"latitude":37.947,"longitude":-122.5495,"num_sats":7,"sats":7,"status":16},"rxInfo":[{"context":"0Vt6RQ==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T05:34:45.961+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T05:34:46.003129723+00:00","rssi":-115,"snr":-1.8,"uplinkId":55633}],"time":"2024-07-22T05:34:45.961+00:00","txInfo":{"frequency":904300000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"code":"UPLINK_F_CNT_RETRANSMISSION","context":{"deduplication_id":"3b29b7ea-d45a-4a0e-9792-76fe1c070670"},"description":"Uplink was flagged as re-transmission / frame-counter did not increment","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"event":"log","level":"WARNING","time":"2024-07-22T05:34:53.966+00:00"}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhmLCA+9","deduplicationId":"2af59a12-4ff4-4942-891a-2092b3481395","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":23,"fPort":1,"object":{"battery":"4.03","downlink":8,"status":142,"temperature":25,"uplink":139},"rxInfo":[{"context":"0sjaDA==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T05:35:09.911+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T05:35:09.961065575+00:00","rssi":-116,"snr":-9.5,"uplinkId":8056}],"time":"2024-07-22T05:35:09.911+00:00","txInfo":{"frequency":904900000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error in forwarding process: Request failed with status code 400
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Received payload: {"adr":true,"confirmed":true,"data":"jhiuCQ+u","deduplicationId":"d554e5b5-6361-4f17-b5b4-b6a54621794a","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":29,"fPort":1,"object":{"battery":"4.01","downlink":9,"status":142,"temperature":24,"uplink":174},"rxInfo":[{"context":"QEVFKg==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T06:05:46.785+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:05:46.827505438+00:00","rssi":-120,"snr":-9.8,"uplinkId":21657}],"time":"2024-07-22T06:05:46.785+00:00","txInfo":{"frequency":905100000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhi4Cg+p","deduplicationId":"3f124ef5-539f-436f-9b62-0d878d88929e","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":31,"fPort":1,"object":{"battery":"4.01","downlink":10,"status":142,"temperature":24,"uplink":184},"rxInfo":[{"context":"WX26Kg==","crcStatus":"CRC_OK","gatewayId":"acbd4c5184bb4c46","gwTime":"2024-07-22T06:14:57.746+00:00","metadata":{"gateway_h3index":"8c2830ba00c8dff","gateway_id":"11g8bjL1csGaSfVPhCQpYPvoKFGsoeyqibDJ4oFbXk1N3rkibnB","gateway_lat":"37.957421315898003","gateway_long":"-122.553115271117264","gateway_name":"sharp-sapphire-bear","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:14:57.809272764+00:00","rssi":-131,"snr":-17,"uplinkId":3501},{"context":"nWY7Ug==","crcStatus":"CRC_OK","gatewayId":"3d86fce4835874ed","gwTime":"2024-07-22T06:14:57.760+00:00","metadata":{"gateway_h3index":"8c2830ba0b747ff","gateway_id":"112n7vcK5X4iYntnr1xggwHeccYdWo6aK68UNHoGQ8RYfB4b3bsF","gateway_lat":"37.948138252209219","gateway_long":"-122.564677057922381","gateway_name":"electric-midnight-dolphin","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:14:57.802498363+00:00","rssi":-131,"snr":-16.8,"uplinkId":30173},{"context":"YRwWUw==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T06:14:57.729+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:14:57.805470025+00:00","rssi":-120,"snr":-6,"uplinkId":29881}],"time":"2024-07-22T06:14:57.746+00:00","txInfo":{"frequency":904500000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhjICg+i","deduplicationId":"21e0d1aa-0a77-49a0-a614-916e666df15b","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":33,"fPort":1,"object":{"battery":"4.00","downlink":10,"status":142,"temperature":24,"uplink":200},"rxInfo":[{"context":"w4tGpA==","crcStatus":"CRC_OK","gatewayId":"3d86fce4835874ed","gwTime":"2024-07-22T06:25:37.703+00:00","metadata":{"gateway_h3index":"8c2830ba0b747ff","gateway_id":"112n7vcK5X4iYntnr1xggwHeccYdWo6aK68UNHoGQ8RYfB4b3bsF","gateway_lat":"37.948138252209219","gateway_long":"-122.564677057922381","gateway_name":"electric-midnight-dolphin","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:25:37.741377170+00:00","rssi":-129,"snr":-15.2,"uplinkId":8661},{"context":"f6LCFQ==","crcStatus":"CRC_OK","gatewayId":"acbd4c5184bb4c46","gwTime":"2024-07-22T06:25:37.702+00:00","metadata":{"gateway_h3index":"8c2830ba00c8dff","gateway_id":"11g8bjL1csGaSfVPhCQpYPvoKFGsoeyqibDJ4oFbXk1N3rkibnB","gateway_lat":"37.957421315898003","gateway_long":"-122.553115271117264","gateway_name":"sharp-sapphire-bear","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:25:37.742912666+00:00","rssi":-131,"snr":-17,"uplinkId":38497},{"context":"h0Eesg==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T06:25:37.694+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:25:37.743465304+00:00","rssi":-114,"snr":-1.2,"uplinkId":9061}],"time":"2024-07-22T06:25:37.703+00:00","txInfo":{"frequency":904300000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error in forwarding process: Request failed with status code 400
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Received payload: {"adr":true,"confirmed":true,"data":"jhjQCw+g","deduplicationId":"223f53bd-7f7a-47d1-89d5-bd5bddbe34ec","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":35,"fPort":1,"object":{"battery":"4.00","downlink":11,"status":142,"temperature":24,"uplink":208},"rxInfo":[{"context":"qE92pQ==","crcStatus":"CRC_OK","gatewayId":"408441d2c3324988","gwTime":"2024-07-22T06:34:48.662+00:00","metadata":{"gateway_h3index":"8c2830ba07631ff","gateway_id":"112vqtf7DCDPFPKpCeVFDRtPrWstRz6fi2m63RhGDE9mfLgSr1Rs","gateway_lat":"37.959169449988885","gateway_long":"-122.552862371483826","gateway_name":"fun-basil-rhino","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:34:48.729796228+00:00","rssi":-127,"snr":-16.2,"uplinkId":5483},{"context":"qBfqkw==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T06:34:48.637+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:34:48.679211259+00:00","rssi":-124,"snr":-13.5,"uplinkId":31065}],"time":"2024-07-22T06:34:48.662+00:00","txInfo":{"frequency":905300000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhjUDA+b","deduplicationId":"a00d7122-e38a-4c65-8c0f-b4c2e3adeb90","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":37,"fPort":1,"object":{"battery":"4.00","downlink":12,"status":142,"temperature":24,"uplink":212},"rxInfo":[{"context":"zKDcTQ==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T06:45:01.587+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T06:45:01.639358713+00:00","rssi":-116,"snr":-3,"uplinkId":17155}],"time":"2024-07-22T06:45:01.587+00:00","txInfo":{"frequency":904100000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Received payload: {"code":"UPLINK_F_CNT_RETRANSMISSION","context":{"deduplication_id":"02da3f71-3944-4948-881a-d06b73c49420"},"description":"Uplink was flagged as re-transmission / frame-counter did not increment","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"event":"log","level":"WARNING","time":"2024-07-22T06:45:07.605+00:00"}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"EDdWgoASIylxOQ==","deduplicationId":"a2739dad-c5e3-4f44-9be7-1dac6d67dc18","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":40,"fPort":1,"object":{"accuracy":8,"gps_quality":"Poor","hdop":8,"latitude":37.947,"longitude":-122.5495,"num_sats":9,"sats":9,"status":16},"rxInfo":[{"context":"E37m/Q==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T07:04:50.548+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:04:50.587349695+00:00","rssi":-117,"snr":-11.8,"uplinkId":42874}],"time":"2024-07-22T07:04:50.548+00:00","txInfo":{"frequency":904100000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error in forwarding process: Request failed with status code 400
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Received payload: {"adr":true,"confirmed":true,"data":"jhj0DA+R","deduplicationId":"b43eb172-d169-4492-a526-827fe6190866","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":41,"fPort":1,"object":{"battery":"3.98","downlink":12,"status":142,"temperature":24,"uplink":244},"rxInfo":[{"context":"FhgH3Q==","crcStatus":"CRC_OK","gatewayId":"408441d2c3324988","gwTime":"2024-07-22T07:05:30.516+00:00","metadata":{"gateway_h3index":"8c2830ba07631ff","gateway_id":"112vqtf7DCDPFPKpCeVFDRtPrWstRz6fi2m63RhGDE9mfLgSr1Rs","gateway_lat":"37.959169449988885","gateway_long":"-122.552862371483826","gateway_name":"fun-basil-rhino","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:05:30.610364877+00:00","rssi":-125,"snr":-14.5,"uplinkId":40567},{"context":"Uiqghw==","crcStatus":"CRC_OK","gatewayId":"3d86fce4835874ed","gwTime":"2024-07-22T07:05:30.523+00:00","metadata":{"gateway_h3index":"8c2830ba0b747ff","gateway_id":"112n7vcK5X4iYntnr1xggwHeccYdWo6aK68UNHoGQ8RYfB4b3bsF","gateway_lat":"37.948138252209219","gateway_long":"-122.564677057922381","gateway_name":"electric-midnight-dolphin","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:05:30.597160809+00:00","rssi":-129,"snr":-15.2,"uplinkId":14892},{"context":"FeB44w==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T07:05:30.503+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:05:30.541640423+00:00","rssi":-120,"snr":-5.5,"uplinkId":28316}],"time":"2024-07-22T07:05:30.516+00:00","txInfo":{"frequency":905100000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Error in forwarding process: Request failed with status code 400
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhgEAA+O","deduplicationId":"2fc35841-5f13-424f-bd23-0e6093b7eba6","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":43,"fPort":1,"object":{"battery":"3.98","downlink":0,"status":142,"temperature":24,"uplink":4},"rxInfo":[{"context":"OdDk7g==","crcStatus":"CRC_OK","gatewayId":"2ce1a73624b26225","gwTime":"2024-07-22T07:15:33.459+00:00","metadata":{"gateway_h3index":"8c2830ba0c9edff","gateway_id":"112T5FKoSxuoUKjF1uCpwUAswVemuWLGvPs9aTV3JJhciuoqcwFe","gateway_lat":"37.950441694343510","gateway_long":"-122.540137345691605","gateway_name":"noisy-cobalt-rabbit","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:15:33.515915176+00:00","rssi":-120,"snr":-9,"uplinkId":22469}],"time":"2024-07-22T07:15:33.459+00:00","txInfo":{"frequency":904700000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
+Received payload: {"adr":true,"confirmed":true,"data":"jhcLAQ+H","deduplicationId":"ec3bd765-1592-494d-817c-c637cb493768","devAddr":"78000197","deviceInfo":{"applicationId":"325b6c03-2d26-487a-a6e5-1e07314b04db","applicationName":"Panga Mappers","devEui":"0018b20000021a0a","deviceClassEnabled":"CLASS_A","deviceName":"Adeunis #2 Panga Mapper (1A0A)","deviceProfileId":"96620908-eaea-45cd-a58b-dd37c192a744","deviceProfileName":"Adeunis Panga Mappers","tags":{},"tenantId":"52f14cd4-c6f1-4fbd-8f87-4025e1d49242","tenantName":"ChirpStack"},"dr":0,"event":"up","fCnt":45,"fPort":1,"object":{"battery":"3.98","downlink":1,"status":142,"temperature":23,"uplink":11},"rxInfo":[{"context":"mJ1Yzg==","crcStatus":"CRC_OK","gatewayId":"3d86fce4835874ed","gwTime":"2024-07-22T07:25:12.434+00:00","metadata":{"gateway_h3index":"8c2830ba0b747ff","gateway_id":"112n7vcK5X4iYntnr1xggwHeccYdWo6aK68UNHoGQ8RYfB4b3bsF","gateway_lat":"37.948138252209219","gateway_long":"-122.564677057922381","gateway_name":"electric-midnight-dolphin","network":"helium_iot","regi":"US915","region_common_name":"US915","region_config_id":"us915_1"},"nsTime":"2024-07-22T07:25:12.477884775+00:00","rssi":-132,"snr":-16.8,"uplinkId":19988}],"time":"2024-07-22T07:25:12.434+00:00","txInfo":{"frequency":903900000,"modulation":{"lora":{"bandwidth":125000,"codeRate":"CR_4_5","spreadingFactor":10}}}}
+Transforming payload for target: prod-app
+Transformed payload: {}
+Forwarding payload to URL: https://app.buoy.fish/api/payloads
+Transforming payload for target: dev-app
+Transformed payload: {}
+Forwarding payload to URL: https://dev.buoy.fish/api/payloads
+Transforming payload for target: mappers
+Transformed payload: {"decoded":{"payload":{}}}
+Forwarding payload to URL: https://mappers.helium.com/api/v1/ingest/uplink
+Transforming payload for target: supabase
+Transformed payload: {}
+Forwarding payload to URL: https://supabase.example.com/api
+Error forwarding to https://app.buoy.fish/api/payloads: Request failed with status code 500
+Error in forwarding process: Request failed with status code 500
+Error forwarding to https://supabase.example.com/api: getaddrinfo ENOTFOUND supabase.example.com
+Error forwarding to https://mappers.helium.com/api/v1/ingest/uplink: Request failed with status code 400
+Error forwarding to https://dev.buoy.fish/api/payloads: Request failed with status code 400
