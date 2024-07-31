@@ -1,88 +1,123 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const Ajv = require('ajv');
 
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON bodies
-app.use(bodyParser.json());
+const ajv = new Ajv();
 
-// Function to transform the payload
-const transformPayload = (payload, target) => {
-  console.log(`Transforming payload for target: ${target}`);
-  // Add your transformation logic here
-  let transformedPayload;
-  switch (target) {
-    case 'prod-app':
-      transformedPayload = { /* transformation logic for prod-app */ };
-    case 'dev-app':
-      transformedPayload = { /* transformation logic for dev-app */ };
-      break;
-    case 'mappers':
-      transformedPayload = { 
-        decoded: {
-          payload: {
-            accuracy: payload.accuracy,
-            altitude: payload.altitude,
-            latitude: payload.latitude,
-            longitude: payload.longitude
-          }
-        }
-       };
-      break;
-    case 'supabase':
-      transformedPayload = { /* transformation logic for Supabase */ };
-      break;
-    default:
-      transformedPayload = payload;
-      }
-  console.log(`Transformed payload: ${JSON.stringify(transformedPayload)}`); 
-  return transformedPayload;
+// JSON schema for validation
+const payloadSchema = {
+  type: 'object',
+  properties: {
+    decoded: {
+      type: 'object',
+      properties: {
+        payload: {
+          type: 'object',
+          properties: {
+            accuracy: { type: 'number' },
+            altitude: { type: 'number' },
+            latitude: { type: 'number' },
+            longitude: { type: 'number' },
+          },
+          required: ['accuracy', 'altitude', 'latitude', 'longitude'],
+        },
+      },
+      required: ['payload'],
+    },
+  },
+  required: ['decoded'],
 };
 
-// Function to forward the payload to the target API
+const validatePayload = ajv.compile(payloadSchema);
+
+app.use(bodyParser.json());
+
+const transformForMappers = (payload) => {
+  if (payload && payload.object) {
+    const transformedPayload = {
+      decoded: {
+        payload: {
+          accuracy: payload.object.accuracy !== undefined ? payload.object.accuracy : 1,
+          latitude: payload.object.latitude,
+          longitude: payload.object.longitude,
+          altitude: payload.object.altitude !== undefined ? payload.object.altitude : 1.5,
+        },
+      },
+      adr: payload.adr,
+      confirmed: payload.confirmed,
+      data: payload.data,
+      deduplicationId: payload.deduplicationId,
+      devAddr: payload.devAddr,
+      deviceInfo: payload.deviceInfo,
+      dr: payload.dr,
+      event: payload.event,
+      fCnt: payload.fCnt,
+      fPort: payload.fPort,
+      object: payload.object,
+      rxInfo: payload.rxInfo,
+      time: payload.time,
+      txInfo: payload.txInfo,
+    };
+
+    console.log(`Transformed payload for Mappers: ${JSON.stringify(transformedPayload, null, 2)}`);
+    if (!validatePayload(transformedPayload)) {
+      console.error('Invalid payload structure:', validatePayload.errors);
+      return null;
+    }
+    return transformedPayload;
+  }
+  console.error('Invalid payload received: Missing object property');
+  return null;
+};
+
 const forwardPayload = async (url, payload) => {
   try {
     console.log(`Forwarding payload to URL: ${url}`);
+    console.log(`Payload: ${JSON.stringify(payload)}`);
     const response = await axios.post(url, payload);
     console.log(`Response from ${url}: ${JSON.stringify(response.data)}`);
     return response.data;
   } catch (error) {
     console.error(`Error forwarding to ${url}:`, error.message);
+    if (error.response) {
+      console.error(`Response status: ${error.response.status}`);
+      console.error(`Response data: ${JSON.stringify(error.response.data)}`);
+    }
     throw error;
   }
 };
 
-// Endpoint to receive payloads from ChirpStack
 app.post('/api/chirpstack', async (req, res) => {
   const payload = req.body;
+
   console.log(`Received payload: ${JSON.stringify(payload)}`);
 
-  // Define your target URLs
-  const targetUrls = {
-    'prod-app': 'https://app.buoy.fish/api/payloads',
-    'dev-app': 'https://dev.buoy.fish/api/payloads',
-    'mappers': 'https://mappers.helium.com/api/v1/ingest/uplink',
-    'supabase': 'https://supabase.example.com/api',
-  };
+  const targetUrls = [
+    { url: 'https://dev.buoy.fish/api/payloads', transform: false },
+    { url: 'https://mappers.helium.com/api/v1/ingest/uplink', transform: true },
+  ];
 
   try {
-    // Forward to each target API
     const results = await Promise.all(
-      Object.entries(targetUrls).map(([target, url]) => {
-        const transformedPayload = transformPayload(payload, target);
-        return forwardPayload(url, transformedPayload);
+      targetUrls.map(async ({ url, transform }) => {
+        const transformedPayload = transform ? transformForMappers(payload) : payload;
+        if (!transformedPayload) {
+          throw new Error('Payload validation failed');
+        }
+        return await forwardPayload(url, transformedPayload);
       })
     );
     res.status(200).send(results);
   } catch (error) {
     console.error('Error in forwarding process:', error.message);
-    res.status(500).send({ error: 'Failed to forward payloads' });
+    res.status(500).send({ error: 'Failed to forward payloads', details: error.message });
   }
 });
 
 app.listen(port, () => {
   console.log(`API translation service listening at http://localhost:${port}`);
 });
-git
