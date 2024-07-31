@@ -41,10 +41,10 @@ const transformForMappers = (payload) => {
     const transformedPayload = {
       decoded: {
         payload: {
-          accuracy: payload.object.accuracy !== undefined ? payload.object.accuracy : 1,
+          accuracy: payload.object.accuracy !== undefined ? payload.object.accuracy : 2.5,
           latitude: payload.object.latitude,
           longitude: payload.object.longitude,
-          altitude: payload.object.altitude !== undefined ? payload.object.altitude : 1.5,
+          altitude: payload.object.altitude !== undefined ? Math.round(payload.object.altitude) : 2,
         },
       },
       adr: payload.adr,
@@ -57,7 +57,10 @@ const transformForMappers = (payload) => {
       event: payload.event,
       fCnt: payload.fCnt,
       fPort: payload.fPort,
-      object: payload.object,
+      object: {
+        ...payload.object,
+        Alt: 2
+      },
       rxInfo: payload.rxInfo,
       time: payload.time,
       txInfo: payload.txInfo,
