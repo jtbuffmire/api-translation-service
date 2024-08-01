@@ -12,25 +12,18 @@ const ajv = new Ajv();
 const payloadSchema = {
   type: 'object',
   properties: {
-    decoded: {
+    payload: {
       type: 'object',
       properties: {
-        payload: {
-          type: 'object',
-          properties: {
-            accuracy: { type: 'number' },
-            altitude: { type: 'number' },
-            latitude: { type: 'number' },
-            longitude: { type: 'number' },
-          },
-          required: ['accuracy', 'altitude', 'latitude', 'longitude'],
-        },
+        accuracy: { type: 'number' },
+        altitude: { type: 'number' },
+        latitude: { type: 'number' },
+        longitude: { type: 'number' },
       },
-      required: ['payload'],
+      required: ['accuracy', 'altitude', 'latitude', 'longitude'],
     },
   },
-  required: ['decoded'],
-};
+}
 
 const validatePayload = ajv.compile(payloadSchema);
 
@@ -39,14 +32,6 @@ app.use(bodyParser.json());
 const transformForMappers = (payload) => {
   if (payload && payload.object) {
     const transformedPayload = {
-      decoded: {
-        payload: {
-          accuracy: payload.object.accuracy !== undefined ? payload.object.accuracy : 2.5,
-          latitude: payload.object.latitude,
-          longitude: payload.object.longitude,
-          altitude: payload.object.altitude !== undefined ? Math.round(payload.object.altitude) : 2,
-        },
-      },
       adr: payload.adr,
       confirmed: payload.confirmed,
       data: payload.data,
@@ -58,8 +43,10 @@ const transformForMappers = (payload) => {
       fCnt: payload.fCnt,
       fPort: payload.fPort,
       object: {
-        ...payload.object,
-        Alt: 2
+        accuracy: payload.object.accuracy !== undefined ? Math.round(payload.object.accuracy) : 2.5, // removed undefined checkpoint to hardcode the value suggested by spacerabbit
+        latitude: payload.object.latitude,
+        longitude: payload.object.longitude,
+        altitude: payload.object.altitude !== undefined ? Math.round(payload.object.altitude) : 2,
       },
       rxInfo: payload.rxInfo,
       time: payload.time,
